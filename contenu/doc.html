@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/super.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="../line-awesome-1.3.0/css/line-awesome.css">
+    <title>Synthetic | Documentation</title>
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar-menu">
+            <div class="wrapper">
+                <div class="header menu">
+                    <icon class="las la-arrow-right super-l1 icon super super-al-center"></icon>
+                    <div class="logo super super-l4 pmoy-super-l8">
+                        <div class="img"></div>
+                        Synthetic
+                    </div>
+                </div>
+                <div class="link-wrapper">
+                    <a href="../index.html" class="link"><span class="dot"></span>Commençons</a>
+                    <a href="" class="link active"><span class="dot"></span>Documentation</a>
+                    <a href="./join-us.html" class="link"><span class="dot"></span>Rejoignez-nous</a>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" class="menu-toggle">
+        <header>
+            <div class="super-l1 not-super pmoy-super super-al-center icon menu-icon ion-drag">
+            </div>
+            <div class="logo super super-l4 pmoy-super-l8">
+                <div class="img"></div>
+                Synthetic
+            </div>
+            <div class="wrapper super pmoy-not-super">
+                <span>
+                    <a href="../index.html">Commençons</a>
+                    <span class="line"></span>
+                </span>
+                <span class="active">
+                    <a href="">Documentation</a>
+                    <span class="line"></span>
+                </span>
+                <span>
+                    <a href="./join-us.html">Rejoignez-nous</a>
+                    <span class="line"></span>
+                </span>
+            </div>
+        </header>
+        <view>
+            <div class="wrapper documentation-wrapper super-flex super-l12 pmoy-super">
+                <div class="super matieres">
+                    <div class="centered-header super super-l12 super-al-center">
+                        <div class="header">
+                            <h2>Table de matières</h2>
+                            <span class="line"></span>
+                        </div>
+                    </div><br><br>
+                    <ul>
+                        <li>
+                            <a href="#introduction" class="current">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#installation">Installation</a>
+                        </li>
+                        <li>
+                            <a href="#projet">Création d'un projet</a>
+                        </li>
+                        <li>
+                            <a href="#base">Les bases de Synthetic</a>
+                            <ul>
+                                <li>
+                                    <a href="#var">Le variables</a>
+                                </li>
+                                <li>
+                                    <a href="#scope">Les étendues de stockages (La portée)</a>
+                                </li>
+                                <li>
+                                    <a href="#point">Les pointeurs d'étendues de variables
+                                    <ul>
+                                        <li>
+                                            <a href="#pointupper"><b>$upper</b></a>
+                                        </li>
+                                        <li>
+                                            <a href="#pointsuper"><b>$super</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#struct">Les valeurs structurées</a>
+                                </li>
+                                <li>
+                                    <a href="#out">Le flux de sortie [ @out(...) ]</a>
+                                </li>
+                                <li>
+                                    <a href="#if">Les structures conditionnelles</a>
+                                </li>
+                                <li>
+                                    <a href="#loops">Les boucles</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#for">@for</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#forin">@for .. in</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#forfrom">@for .. from</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#while">@while</a>
+                                        </li>
+                                        <li>
+                                            <a href="#loop">@loop</a>
+                                        </li>
+                                        <li>
+                                            <a href="#break">L'instruction @break;</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#fn">Les fonctions</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#fndef">Déclaration d'une fonction</a>
+                                        </li>
+                                        <li>
+                                            <a href="#fnuse">Utilisation d'une fonction</a>
+                                        </li>
+                                        <li>
+                                            <a href="#fnsys">Les fonctions intégrées</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#except">Les exceptions</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#sspa">Extension mobile design (SSPA)</a>
+                            <ul>
+                                <li>
+                                    <a href="#pkg">Les Packages</a>
+                                </li>
+                                <li>
+                                    <a href="#man">Le manifest logique intégré (.lmi)</a>
+                                </li>
+                                <li>
+                                    <a href="#mxn">Les Mixins</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#mxndef">Déclaration d'un mixin</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#mxnarg">Les arguments d'un mixin</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#mxnargcst">@const</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#mxnargset">@unset</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#mxnargval">contrainte de valeur (pseudo-généricité)</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#mxnuse">Utilisation d'un mixin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#mxnscp">Portée des mixins</a>
+                                        </li>
+                                        <li>
+                                            <a href="#mxnleg">Héritage des mixins</a>
+                                        </li>
+                                        <li>
+                                            <a href="#mxnusd">Les mixins unused</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#mod">Les Modules simples</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#moduse">Utilisation d'un module simple</a>
+                                        </li>
+                                        <li>
+                                            <a href="#modpoint">Le pointeur <b>self</b></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#dir">Les Directives préprocesseures</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#imp">@import</a>
+                                        </li>
+                                        <li>
+                                            <a href="#from">@from</a>
+                                        </li>
+                                        <li>
+                                            <a href="#inc">@include</a>
+                                        </li>
+                                        <li>
+                                            <a href="#use">@use</a>
+                                        </li>
+                                        <li>
+                                            <a href="#req">@require</a>
+                                        </li>
+                                        <li>
+                                            <a href="#ssp">@sspa-phase</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="super documentation">
+                    <div class="super super-l12 super-al-right" style="padding: 1em .5em;">
+                        <a href="../pdf/tuto.pdf"><button class="primary"><icon class="ion-android-download"></icon> Télécharger la documentation</button></a>
+                    </div>
+                    <h1 id="introduction">Introduction</h1>
+                    <p>
+                        Synthetic est un langage en développement, conçu pour être simple à pratiquer et très intuitif.
+                        Il répond à différente problématique de codage surtout lorsqu'on doit traiter beaucoup de codes HTML
+                        qui peuvent devenir trop lourds à gérer. L'interpréteur de Synthetic a été écrit en Javascript, ce qui
+                        lui permet la facilité d'être embarqué à temps réel dans des projets web.
+                        <br><br>
+                        Synthetic est aussi introduit avec un framework orienté mobile design, SSPA (Synthetic Single Page Application)
+                        qui prolonge le concept de mixin et de module. Il comprend aussi un système de package
+                        bien simple, permettant de bien structurer son code.
+                    </p>
+                    <h1 id="installation">Installation</h1>
+                    <p>
+                        L'installation de Synthetic requiert d'abord l'installation de <strong>Node Js</strong> et 
+                        son gestionnaire de package <b>NPM</b>. La vidéo suivante fait une brève introduction sur le langage.
+                    </p>
+                    <div class="super super-l12 super-al-center" style="padding: .5em 0;">
+                        <video title="Introduction à Synthetic" controls poster="../photos/capture-1.png"  src="../videos/vid.mkv"></video>
+                    </div>
+                    <p>
+                        Après avoir installé Nodejs, on peut installer Synthetic comme suit:
+                        <pre class="shell">$ npm install -g synthetic-dev</pre>
+                    </p>
+                    <h1 id="projet">Création d'un projet</h1>
+                    <p>
+                        Par défaut, Synthetic embarque le système de <a href="#pkg">package</a> utilisé dans <a href="#sspa">SSPA</a>
+                        mais l'interprétation se fait comme si tout était écrit dans un seul fichier. Pour créer un projet,
+                        voici un exemple:
+                        <pre class="shell">$ mkdir mon_dossier<br>$ cd mon_dossier<br>$ synthetic init ./</pre>
+                    </p>
+                    <h1 id="base">Les bases de Synthetic</h1>
+                    <p>
+                        Cette partie présentera la base de Synthetic dans toute sa simplicité. Le syntaxe
+                        de Synthetic ressemble un peu partout aux langages les plus utilisés de nos jours. Le fait
+                        qu'aucun mot-clé n'est épargné, même dans les chaines de caractères, Synthetic exige un caractère
+                        de repérage pour chaque mot-clé et pour les noms des fonctions aussi    , et ce caractères est "<b>@</b>".
+                    </p>
+                    <h2 id="var">Les variables</h2>
+                    <p>
+                        La déclaration de variable se fait avec le mot clé @var.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@var</c> <c class="variable">mon_variable</c>;<br><c class="directive">@var</c> <c class="variable">langage</c> = <c class="value string">"Synthetic"</c>;<br><c class="directive">@var</c> <c class="variable">devMod</c> = <c class="value constant">true</c>,<br>     <c class="variable">version</c> = <c class="value text">1</c>;</pre>
+                    </example>
+                    <p>
+                        Les noms des variables doivent être composés de caractères alphanumérique 
+                        incluant l'underscore "<b>_</b>"
+                    </p>
+                    <h2 id="scope">Les étendues de stockage (La portée)</h2>
+                    <p>
+                        Les étendues de stockage concerne les déclarations des variables et celles des
+                        fonctions. Une variable déclarée dans une étendue n'est accessible qu'à l'intérieur
+                        de son étendue et celles qui en découlent.
+                    </p>
+                    <example>
+                        <pre class="code">{<c class="comment">// Une étendue</c><br>   <c class="directive">@var</c> <c class="variable">mon_var</c> = <c class="value constant">5</c>;  <c class="comment">// Déclaration de la variable $mon_var</c><br>   <c class="comment">// $mon_var est accessible dans cette étendue</c><br>    {<br>       <c class="comment">// Et dans cette étendue aussi</c><br>    }<br>}<br>{<c class="comment">// Une étendue indépendante</c><br>  <c class="comment">// $mon_var n'est pas accessible dans cette étendue</c><br>} </pre>
+                    </example>
+                    <h2 id="point">Les pointeurs d'étendue de variables</h2>
+                    <p>
+                        Synthetic permet d'accéder à des anciennes valeurs, ou peut-être même à la valeur initiale
+                        d'une variable dans une étendue différente mais indépendante.
+                        <br>
+                        Voici un exemple qui peut expliquer la problématique:
+                    </p>
+                    <example>
+                        <pre class="code">{<c class="comment">// Une étendue</c><br>   <c class="directive">@var</c> <c class="variable">mon_var</c> = <c class="value constant">5</c>;  <c class="comment">// Déclaration de la variable $mon_var</c><br>   <c class="comment">// $mon_var vaut 5 dans cette étendue</c><br>    {<br>       <c class="directive">@var</c> <c class="variable">mon_var</c> = <c class="value constant">8</c>; <c class="comment">// Si on redéclare $mon_var cette étendue, on perd son ancienne valeur : <i>5</i></c><br>    }<br>}<br>{<c class="comment">// Une étendue indépendante</c><br>  <c class="comment">// $mon_var n'est pas accessible dans cette étendue</c><br>} </pre>
+                    </example>
+                    <h3 id="pointupper">$upper</h3>
+                    <p>
+                        Le pointer <b>$upper</b> permet de monter d'une étendue d'exécution.
+                        Dans l'exemple suivant, vous verrez comment:
+                    </p>
+                    <example>
+                        <pre class="code">{<c class="comment">// Une étendue</c><br>   <c class="directive">@var</c> <c class="variable">mon_var</c> = <c class="value constant">5</c>;  <c class="comment">// Déclaration de la variable $mon_var</c><br>   <c class="comment">// $mon_var vaut 5 dans cette étendue</c><br>    {<br>       <c class="directive">@var</c> <c class="variable">mon_var</c> = <c class="value constant">8</c>; <c class="comment">// Si on redéclare $mon_var dans cette étendue, on perd son ancienne valeur : <i>5</i></c><br>       <c class="member">@out</c>(<c class="variable">$mon_var</c>); <c class="comment">// Affiche : 8</c><br>       <c class="member">@out</c>(<c class="variable">$upper.mon_var</c>); <c class="comment">// Affiche : 5</c><br>    }<br><br>}</pre>
+                    </example>
+                    <p>
+                        Le pointer $upper doit toujours se trouver au commencement de l'appelation de la variable
+                        et il peut être dupliqué de façon successive si on veut remonter à <b><i>n</i></b> étendues parentes.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="variable">$upper.upper...</c></pre>
+                    </example>
+                    <h3 id="pointsuper">$super</h3>
+                    <p>
+                        Le pointeur $super fait la même chose, mais en une seule fois.
+                        Il pointe directement à l'étendue de base (<i>L'étendue racine</i>).
+                        De même que $upper, il se place toujours au début, <b>mais ne peut pas être dupliqué</b>.
+                    </p>
+                    <h2 id="struct">Les valeurs structurées</h2>
+                    <p>
+                        Synthetic comprend plusieurs types de valeurs
+                        <ul>
+                            <li>Les nombres</li>
+                            <li>Les booléens</li>
+                            <li>Les fonctions anonymes</li>
+                            <li>
+                                Les valeurs structurées
+                                <ul>
+                                    <li>Les textes</li>
+                                    <li>Les listes</li>
+                                    <li>Les dictionnaires</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br><br>
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@var</c> <c class="variable">number</c> = <c class="value constant">0.9</c>;<br><c class="directive">@var</c> <c class="variable">boolean</c> = <c class="value constant">true</c>;<br><c class="directive">@var</c> <c class="member">sum</c> = (<c class="variable">$a</c>, <c class="variable">$b</c>){<br>  <c class="comment">// instructions</c><br>}<br><c class="directive">@var</c> <c class="variable">text_quoted</c> =  <c class="value string">"Hello !"</c>;<br><c class="directive">@var</c> <c class="variable">text</c> = <c class="value text">Hello !</c>;<br><c class="directive">@var</c> <c class="variable">list</c> = [<c class="value constant">1</c>,<c class="value constant">2</c>, <c class="value string">"Salut"</c>, <c class="value text">Le monde !</c>, [<c class="value constant">true</c>, <c class="value constant">0</c>], <c class="value constant">4</c>];<br><c class="directive">@var</c> <c class="variable">dict</c> = {<br>   <c class="variable">cle</c> : <c class="value text">valeur</c>,<br>   <c class="variable">autre_cle</c> : {<br>       <c class="comment">// ...Autre imbrication</c><br>  }<br>} </pre>
+                    </example>
+                    <h2 id="out">Le flux de sortie</h2>
+                    <p>
+                        Le flux de sortie est traité par la fonction @out, elle ne prend qu'un seul
+                        argument. Elle affiche son unique paramètre en même temps qu'elle le traite comme du code
+                        du langage Synthetic. Dans le cas d'utilisation d'une variable, il faut précéder son nom avec
+                        le caractère "<b>$</b>".
+                    </p>
+                    <example>
+                        <pre class="code"><c class="member">@out</c>(<c class="variable">$bonjour</c>);</pre>
+                    </example>
+                    <p>
+                        À l'intérieur de la fonction @out, on peut exécuter du code Synthetic, en réalité, la fonction
+                        @out n'est qu'un espace d'exécution en ligne de Synthetic.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="member">@out</c>(<br>   <c class="directive">@var</c> <c class="variable">bonjour</c> = <c class="value string">"Bonjour tout le monde !"</c>;<br>   <c class="member">@out</c>(<c class="variable">$bonjour</c>); <c class="comment">//Affiche "Bonjour tout le monde !"</c><br>);</pre>
+                    </example>
+                    <h2 id="if">Les structures conditionnelles</h2>
+                    <p>
+                        Comme dans tout langage de programmation, les structures conditionnelles
+                        permettent de tester des valeurs pour exécuter des codes différents.
+                        Synthetic reconnait <b>@if</b>, <b>@elif</b> et <b>@else</b>.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@if</c>(<c class="variable">$version</c> == <c class="value constant">1</c>){<br>  <c class="member">@out</c>(<c class="value text">La version est basique</c>);<br>}<c class="directive">@elif</c>(<c class="variable">$version</c> < <c class="value constant">3</c>){<br>  <c class="member">@out</c>(<c class="value text">La version plutot cool !</c>)<br>}<c class="directive">@else</c>{<br>  <c class="member">@out</c>(<c class="value text">La version est top !</c>)<br>}</pre>
+                    </example>
+                    <p>
+                        À l'instar de Python, Synthetic ne reconnait pas la structure <b>switch</b>.
+                    </p>
+                    <h2 id="loops">Les boucles</h2>
+                    <p>
+                        Synthetic comprend 3 types de boucle.
+                    </p>
+                    <h3 id="for">@for</h3>
+                    <p>
+                        La boucle <b>@for</b> se présente sous 2 formes.
+                        <br>
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            Il est à noter que les variables d'itération sont automatiquement 
+                            déclarées dans l'étendue de la boucle.
+                        </strong>
+                    </p>
+                    <h4 id="forin">@for ... in</h4>
+                    <p>
+                        La boucle <b>@for ... in</b> est conçue pour parcourir les listes, les structures
+                        clés-valeurs et les textes (ou chaines de caractères).
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@for</c>(<c class="variable">$i</c> <c class="directive">in</c> <c class="variable">$array</c>){<br>  <c class="member">@out</c>(<c class="variable">$i</c>)<br>}</pre>
+                    </example>
+                    <p>
+                        Le cas précédent parcourt les valeurs des <a href="#struct">structures itérables</a>, 
+                        tandisque le cas suivant permet de parcourir et les clés et les valeurs
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@for</c>(<c class="variable">$i</c>,<c class="variable">$j</c> <c class="directive">in</c> <c class="variable">$array</c>){<br>  <c class="member">@out</c>(<c class="value text">La clé est :</c> <c class="variable">$i</c>, <c class="value text">La valeur est :</c> <c class="variable">$j</c>)<br>}</pre>
+                    </example>
+                    <h4 id="forfrom">@for ... from ... to</h4>
+                    <p>
+                        La boucle <b>@for ... from ... to</b> est l'équivalent de la boucle classique <b>for(... ; ... ; ...)</b>
+                        mais de façon plus simple à utiliser.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@for</c>(<c class="variable">$i</c> <c class="directive">from</c> <c class="value constant">0</c> <c class="directive">to</c> <c class="value constant">10</c>){<br>  <c class="member">@out</c>(<c class="variable">$i</c>)  <c class="comment">// Affiche : 0,1,2,3,4,5,6,7,8,9,10</c><br>}</pre>
+                    </example>
+                    <h2 id="while">@while</h2>
+                    <p>
+                        La boucle @while est très simple à utiliser. Si vous connaissez déjà un langage
+                        de programmation, vous savez alors comment utiliser cette boucle.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@var</c> <c class="variable">i</c> = 0;<br><c class="directive">@while</c>(<c class="variable">$i</c> < <c class="value constant">5</c>){<br>    <c class="member">@out</c>(<c class="variable">$i</c>); <c class="comment">//Cette boucle va aficher 0, 1, 2, 3, 4</c><br>    <c class="variable">$i</c>++;<br>}</pre>
+                    </example>
+                    <h2 id="loop">@loop</h2>
+                    <p>
+                        La boucle @loop est une boucle avancée introduite avec Synthetic. Elle permet de
+                        parcourir uniquement les valeurs structurées. Elle crée de façon implicite 3 variables dans son
+                        étendue:
+                        <ul>
+                            <li>$i : pour parcourir les valeurs</li>
+                            <li>$j : pour parcourir les clés</li>
+                            <li>$k : un compteur d'itération</li>
+                        </ul>
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            La boucle @loop, dans le cas du parcours d'un dictionnaire, transforme tous les
+                            clés en variables.
+                        </strong>
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@var</c> <c class="variable">struct</c> = {<br>   <c class="variable">langage</c> : <c class="value text">Synthetic</c><br>};<br><c class="directive">@loop</c>(<c class="variable">$struct</c>){<br>     <c class="member">@out</c>(<c class="variable">$i</c>)<c class="comment">// Affiche : Synthetic</c><br>     <c class="member">@out</c>(<c class="variable">$langage</c>)<c class="comment">// Affiche aussi : Synthetic</c><br>     <c class="member">@out</c>(<c class="variable">$j</c>)<c class="comment">// Affiche : langage</c><br>     <c class="member">@out</c>(<c class="variable">$k</c>)<c class="comment">// Affiche : 0</c><br>}</pre>
+                    </example>
+                    <h2 id="break">L'instruction @break;</h2>
+                    <p>
+                        L'instruction @break est utilisée dans l'exécution d'une boucle pour fermer
+                        cette dernière prématurément.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@var</c> <c class="variable">i</c> = 0;<br><c class="directive">@while</c>(<c class="variable">$i</c> < <c class="value constant">5</c>){<br>    <c class="member">@out</c>(<c class="variable">$i</c>); <c class="comment">//Cette boucle va aficher 0, 1, 2</c><br>    <c class="directive">@if</c>(<c class="variable">$i</c> == <c class="value constant">2</c>){<br>       <c class="directive">@break</c>;<br>    }<br>   <c class="variable">$i</c>++;<br>}</pre>
+                    </example>
+                    <h1 id="fn">Les fonctions</h1>
+                    <p>
+                        Les fonctions en Synthetic sont à la fois simple à définir et à utiliser.
+                        Comme les variables, elles ne sont pas explicitement typées.
+                    </p>
+                    <h2 id="fndef">Déclaration d'une fonction</h2>
+                    <p>
+                        La déclaration d'une fonction est simple, et le mot-clé nécessaire est @fn
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@fn</c> <c class="function">nom_Fonction</c>(){<br>   <c class="comment">// Instruction</c><br>} </pre>
+                    </example>
+                    <p>
+                        Une fonction peut être déclarée avec des paramètres, et ces paramètres peuvent avoir des valeurs par défaut.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@fn</c> <c class="function">nom_Fonction</c>(<c class="variable">$arg</c>){<br>   <c class="comment">// Instruction</c><br>}<br><c class="directive">@fn</c> <c class="function">myFonction</c>(<c class="variable">$arg</c> : <c class="value text">value</c>){<br>   <c class="comment">// Instruction</c><br>} </pre>
+                    </example>
+                    <p>
+                        Il n'est pas obligatoire de donner à tous les arguments des valeurs par défaut.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@fn</c> <c class="function">nom_Fonction</c>(<c class="variable">$arg</c>, <c class="variable">$arg2</c> : <c class="value text">value</c>){<br>   <c class="comment">// Instruction</c><br>} </pre>
+                    </example>
+                    <h2 id="fnuse">Utilisation d'une fonction</h2>
+                    <p>
+                        L'utilisation d'une fonction est très simple. Il suffit juste de faire précéder
+                        l'"<b>@</b>" devant le nom de la fonction.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@fn</c> <c class="function">hello</c>(<c class="variable">$arg</c> : <c class="value text">le monde</c>){<br>   <c class="member">@out</c>(<c class="value text">Bonjour</c> <c class="variable">$arg</c> <c class="value text">!</c>);<br>}<br><c class="member">@hello</c>(); <c class="comment">// Affiche: Bonjour le monde !</c><br><c class="member">@hello</c>(<c class="value text">Synthetic</c>); <c class="comment">// Affiche: Bonjour Synthetic !</c></pre>
+                    </example>
+                    <p>
+                        Synthetic donne la possiblité d'appeler une fonction sans donner tous les
+                        paramètres. On modifie la valeur de l'argument que l'on souhaite seulement.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@fn</c> <c class="function">hiPerson</c>(<c class="variable">$name</c>: <c class="value text">Scott</c>, <c class="variable">$sexe</c> : <c class="value text">M</c>, <c class="variable">$age</c> : <c class="value text">30</c>){<br>   <c class="member">@out</c>(<c class="value text">Hello :</c> <c class="variable">$name</c> <c class="value text">|</c> <c class="value text">Sexe :</c> <c class="variable">$sexe</c> <c class="value text">|</c> <c class="value text">Age :</c> <c class="variable">$age</c>);<br>}<br><c class="member">@hiPerson</c>(); <c class="comment">// Affiche Hello Scott | Sexe : M | Age : 30</c><br><c class="member">@hiPerson</c>(<c class="variable">$age</c> : <c class="value constant">25</c>); <c class="comment">// Affiche Hello Scott | Sexe : M | Age : 25</c></pre>
+                    </example>
+                    <p>
+                        Lorsqu'on appelle une fonction en précisant le nom du paramètre,
+                        l'ordre de définition des paramètres n'est plus important.
+                        Cet ordre est obligatoire seulement lorsqu'on appelle une fonction sans préciser
+                        le nom des variables.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="member">@hiPerson</c>(<c class="variable">$age</c> : <c class="value constant">28</c>, <c class="variable">$name</c> : <c class="value text">Jhon</c>); <c class="comment">// Affiche : Hello Jhon | Sexe : M | Age : 28</c><br><c class="member">@hiPerson</c>(<c class="value text">Jhon</c>,<c class="variable">$age</c> : <c class="value constant">28</c>); <c class="comment">// Affiche : Hello Jhon | Sexe : M | Age : 28</c></pre>
+                    </example>
+                    <p>
+                        Avec ce dernier exemple, vous comprendrez que lorsqu'on ne précise pas le nom
+                        de la variable, Synthetic va chercher l'argument qui correspond à la position avec
+                        laquelle on l'a appelée. Ici "Jhon" est à la première position, Synthetic
+                        trouve donc l'argument <b>$name</b> qui se trouve dans la première position lors
+                        de la déclaration de la fonction.
+                    </p>
+                    <h2 id="fnsys">Les fonctions intégrées</h2>
+                    <p>
+                        Les fonctions intégrées sont des fonctions prédéfinies par Synthetic pour faciliter la tâche
+                        de développement. Les fonction intégrées de synthetic sont:
+                        <table>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Argument</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>@len</td>
+                                <td><c class="type">&lt;Any&gt;</c> : N'importe quelle valeur, mais une seule valeur</td>
+                                <td>Permet de calculer</td>
+                            </tr>
+                            <tr>
+                                <td>@concat</td>
+                                <td><c class="type">&lt;Any&gt;</c> : N'importe quelle valeur, mais autant d'argument possible</td>
+                                <td>Permet de concatener les valeurs</td>
+                            </tr>
+                            <tr>
+                                <td>@print</td>
+                                <td><c class="type">&lt;Any, ...&gt;</c> : N'importe quelle valeur, mais une seule valeur</td>
+                                <td>Pour afficher tout simplement</td>
+                            </tr>
+                            <tr>
+                                <td>@replace</td>
+                                <td>
+                                    <c class="type">&lt;[Text | RegExp], Any&gt;</c> : prend deux paramètres, 
+                                    le premier doit être un text ou une expression régulière.
+                                    Le second paramètre peut être nimporte quelle valeur.
+                                </td>
+                                <td>Permet de remplacer une valeur dans une autre valeur</td>
+                            </tr>
+                            <tr>
+                                <td>@match</td>
+                                <td>
+                                    <c class="type">&lt;[Text | RegExp], Any&gt;</c> : prend deux paramètres, 
+                                    le premier doit être un text ou une expression régulière.
+                                    Le second paramètre peut être nimporte quelle valeur.
+                                </td>
+                                <td>
+                                    Permet de vérifier si une valeur ou une forme de valeur se trouve bien
+                                    dans une autre valeur.
+                                </td>
+                                <tr>
+                                    <td>@upper</td>
+                                    <td><c class="type">&lt;Text&gt;</c> : Un texte, mais une seule valeur</td>
+                                    <td>Permet de mettre en capital toutes les lettres d'un texte</td>
+                                </tr>
+                                <tr>
+                                    <td>@lower</td>
+                                    <td><c class="type">&lt;Text&gt;</c> : Un texte, mais une seule valeur</td>
+                                    <td>Permet de mettre en miniscule toutes les lettres d'un texte</td>
+                                </tr>
+                                <tr>
+                                    <td>@sort</td>
+                                    <td><c class="type">&lt;[List | Dict | Text]&gt;</c> : Une liste ou un dictionnaire ou un texte, mais une seule valeur</td>
+                                    <td>Permet d'ordonner alphabétiquement</td>
+                                </tr>
+                                <tr>
+                                    <td>@split</td>
+                                    <td>
+                                        <c class="type">&lt;Text, Text&gt;</c> : deux types de valeurs, un texte, et un autre texte,
+                                        le premier est un délimiteur, tandisque le second est la valeur à trancher.
+                                        cette fonction retourne une liste provenant de la deuxième valeur découpée.
+                                        <br>
+                                        Par exemple:
+                                        <pre class="code"><c class="directive">@var</c> <c class="variable">nom</c> = <c class="value text">William Scott Allen</c>,<br>     <c class="variable">names</c> = <c class="member">@split</c>(<c class="value String">" "</c>, <c class="variable">$nom</c>); <c class="comment">// Donnera :  [William, Scott, Allen] comme liste<br><br><c class="member">@out</c>(<c class="variable">$names</c>[<c class="value constant">0</c>])</c>  <c class="comment">// Affiche : William</c></pre>
+                                    </td>
+                                    <td>Permet de mettre en miniscule toutes les lettres d'un texte</td>
+                                </tr>
+                            </tr>
+                        </table>
+                    </p>
+                    <h2 id="except">Les Exceptions</h2>
+                    <p>
+                        La gestion des exceptions n'est pas poussée en Synthetic. Elle a été conçue
+                        pour palier les erreurs d'exécution qui peuvent en subvenir.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@try{</c><br>    <c class="comment">// Instructions à surveiller</c><br>}<c class="directive">@catch</c>(<c class="variable">$e</c>){ <c class="comment">//Le message d'erreur est capturé</c><br>   <c class="comment">// Instructions à faire</c><br>}</pre>
+                    </example>
+                    <h1 id="sspa">Extension mobile design (SSPA)</h1>
+                    <p>
+                        Synthetic est introduit avec un framework permettant de créer facilement
+                        des interfaces applicatives et interactives. C'est la plus grande raison pour
+                        laquelle Synthetic a été développé. Son système répose sur une synthèse de codes
+                        structuré, se mêlangeant avec de la programmation classique évoluée et d'un système
+                        s'apparentant aux templates.
+                        <br>
+                        Synthetic réunit à la fois du code HTML, CSS et Javascript. Ce qui fait de Synthetic:
+                    </p>
+                    <p class="formule">
+                        <c class="r">S</c><c class="y">S</c><c class="b">P</c><c class="c">A</c> = ( <b class="r">HTML</b> + <b class="b">CSS</b> + <b class="y">Javascript</b> ) <b class="c">Synthetic</b>
+                    </p>
+                    <p>
+                        Mais avant tout, Synthetic a ses propres moyens pour réunir ces trois technologies.
+                    </p>
+                    <h2 id="pkg">Les packages</h2>
+                    <p>
+                        Un package en Synthetic est un dossier contenant des fichiers sources.
+                        <div class="super super-l12 img" style="background-image: url(../photos/capture-ide-1.png);"></div>
+                    </p>
+                    <p>
+                        Un package doit obligatoire un fichier sans nom, d'extension ".lpkg". C'est le 
+                        gestionnaire des fichiers sources qui seront disponibles à l'extérieur du package, 
+                        puisque par défaut, les fichiers sources sont accessibles uniquement à l'intérieur
+                        de son package contenant.
+                        <span class="info-box blue">
+                            <i class="ion-information-circled"></i> 
+                            lpkg: <b>l</b>ogic <b>p</b>ac<b>k</b>a<b>g</b>e
+                        </span>
+                        <div class="super super-l12 img" style="background-image: url(../photos/capture-ide-2.png);"></div>
+                    </p>
+                    <p>
+                        Les noms des fichiers précisés dans le fichier lpkg seront ceux qui seront visibles à l'extérieur
+                        du package. La façon d'écrire dans le fichier lpkg est simple. Il faut juste respecter le 
+                        séparateur ":" entre deux noms de fichier.
+                    </p>
+                    <example>
+                        <pre class="code">nom_fichier1:<br>nom_fichier2:<br>...</pre>
+                    </example>
+                    <p>
+                        Il n'est pas nécessaire de mettre le caractère ":" après le dernier nom de fichier.
+                        Et s'il y a un seul fichier, on peut mettre tout simplement le nom du fichier.
+                    </p>
+                    <h2 id="man">Le manifest logique intégré (.lmi)</h2>
+                    <p>
+                        Synthetic requiert un fichier de controle pour que SSPA fonctionne, c'est le ".lmi".
+                        <span class="info-box blue">
+                            <i class="ion-information-circled"></i> 
+                            lmi: <b>l</b>ogic <b>m</b>anifest <b>i</b>ntegrated
+                        </span>
+                        Le profil de ce fichier varie en fonction du projet. Mais, la définition de base
+                        se fait exclusivement par Synthetic. Et en gros, ce n'est qu'un fichier dont la syntaxe se rapproche de celui de JSON.
+                        <div class="super super-l12 img large" style="background-image: url(../photos/capture-ide-3.png);"></div>
+                        <div class="super super-l12 img large" style="background-image: url(../photos/capture-ide-4.png);"></div>
+                    </p>
+                    <h2 id="mxn">Les mixins</h2>
+                    <p>
+                        Les mixins sont des structures de code, ressemblant d'abord aux fonctions. Synthetic les pousse
+                        encore plus loins en leur faisant ressembler aux classes via la notion d'héritage.
+                        <br>
+                        Un mixin n'est ni une fonction, ni une classe mais pioche un peu un ou deux caractères de ces deux concepts.
+                        Tout comme une fonction, un mixin a des paramètres et un corps (le rendu semi-exécutable).
+                    </p>
+                    <h3 id="mxndef">Déclaration d'un mixin</h3>
+                    <p>
+                        Le mot clé @mixin est celui qu'on doit utiliser pour déclarer un mixin.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nomMixin</c>(){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <h4 id="mxnarg">Les arguments d'un mixin</h4>
+                    <p>
+                        La définition des arguments d'un mixin se fait comme on le fait pour une fonction. Mais en plus,
+                        on peut mettre des contraintes sur les arguments.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nom_mixin</c>(<c class="variable">$type</c> : <c class="value text">value</c>){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <h5 id="mxnargcst">@const</h5>
+                    <p>
+                        La contrainte @const interdit de modifier la valeur par défaut d'un argument lorsqu'on appelle
+                        un mixin.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nom_mixin</c>(<c class="constraint prefix">@const</c> <c class="variable">$type</c> : <c class="value text">value</c>){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <p>
+                        <span class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            Lorsqu'un argument est @const, Synthetic le place au commencement de la file d'exécution, et cela
+                            quelque soit sa position dans la déclaration.
+                        </span>
+                    </p>
+                    <h5 id="mxnargset">@unset</h5>
+                    <p>
+                        La contrainte @unset est l'opposé de la contrainte @const. Elle impose de donner une valeur à l'argument lorsqu'on
+                        fait appelle au mixin.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nom_mixin</c>(<c class="constraint prefix">@unset</c> <c class="variable">$type</c> : <c class="value text">value</c>){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <h5 id="mxnargval">Contrainte de valeur (pseudo-généricité)</h5>
+                    <p>
+                        On peut aussi mettre des contraintes sur la valeur à donner à un argument lors de 
+                        l'appellation du mixin.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nom_mixin</c>(<c class="variable">$type</c> : <c class="constraint prefix">&lt;Any&gt;</c> <c class="value text">value</c>){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <p>
+                        Les contraintes peuvent être : Any, String, Boolean, Number et les nom de Mixins (lorsqu'on souhaite passer un mixin)
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            si A hérite de B, alors A est aussi B, donc une valeur de contrainte B est aussi permissible pour A.
+                        </strong>
+                    </p>
+                    <h3 id="mxnuse">Utilisation d'un mixin</h3>
+                    <p>
+                        L'appellation d'un mixin se fait avec le mot-clé @use, et on continue de faire comme si c'était une 
+                        <a href="#fnuse">fonction</a>.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@use</c> <c class="member">nom_mixin</c>();</pre>
+                    </example>
+                    <h3 id="mxnscp">Portée des mixins</h3>
+                    <p>
+                        Un mixin peut être public ou privé. Par défaut tout mixin est publique, donc le mot-clé <b>@public</b> est facultatif.
+                        Lorsqu'un mixin est privé, il est accéssible uniquement à l'intérieur de son fichier source.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@private mixin</c> <c class="member">nomMixin</c>(){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <h3 id="mxnleg">Héritage des mixins</h3>
+                    <p>
+                        Un mixin peut hériter un ou plusieurs autres mixins. L'ordre d'héritage est important, le dernier héritage super-al-center
+                        celui qui aura la plus grande priorité. Pour l'héritage, on utilise le mot-clé <b>extends</b>
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@mixin</c> <c class="member">nomMixin</c> <c class="directive">extends</c> <c class="member">autreMixin</c>(){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <p>
+                        Lorsqu'un mixin hérite un autre mixin, il fait la copie des arguments de ce dernier, y compris son contenu qu'il
+                        place avant le sien. Et contrairement pour les arguments, les arguments du mixin se trouvent toujours avant 
+                        des arguments hérités.
+                    </p>
+                    <h3 id="mxnusd">Les mixins unused</h3>
+                    <p>
+                        Les mixins sous contrainte @unused sont des mixins qui peuvent seulement hériter et être hérité,
+                        mais jamais utilisé. Une tentative d'utiliser un mixin @unused soulèverait une erreur.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@unused mixin</c> <c class="member">nomMixin</c>(){<br>   <c class="comment">// Bloc du rendu</c><br>}</pre>
+                    </example>
+                    <h2 id="mod">Les modules simples</h2>
+                    <p>
+                        Les modules simples sont des codes interprétables comme module du coté préprocesseur, et comme asynchrone
+                        du coté exécution (C'est à dire que Synthetic ne le traitera plus tard seulement sur denande, sinon il 
+                        l'ignore).
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@module</c> <c class="variable">nom_Module</c>{<br>      <c class="comment">//rendu asynchrone ou module</c><br>}</pre>
+                    </example>
+                    <h3 id="moduse">Utilisation d'un module simple</h3>
+                    <p>
+                        L'utilisation d'un @module se fait de la même manière qu'un mixin, mais sans aucun parenthèse.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@use</c> <c class="variable">nom_Module</c>;</pre>
+                    </example> 
+                    <p>
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            Synthetic sait différencier l'appelation d'un mixin et d'un module, donc dans un même fichier
+                            il permissible qu'un mixin ait le même nom qu'un module
+                        </strong>
+                    </p>
+                    <h3 id="modpoint">Le pointeur self</h3>
+                    <p>
+                        Lorsque l'on souhaite utiliser un simple module dans le même fichier qu'il a été défini,
+                        on utilise le mot-clé <b>self</b> précédant le nom du module. Ceci évite les conflits de nom
+                        lors des importations de modules dans le même fichier.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@module</c> <c class="variable">test</c>{<br>    <c class="balise">&lt;span&gt;</c>Ok<c class="balise">&lt;/span&gt;</c><br>}<br><br><c class="directive">@use</c> <c class="variable">test</c>; <c class="comment">// N'affiche rien</c><br><c class="directive">@use</c> <c class="alias">self</c>.<c class="variable">test</c>; <c class="comment">// donne : &lt;span&gt;Ok&lt;/span&gt;</c></pre>
+                    </example>
+                    <h2 id="dir">Les Directives préprocesseures</h2>
+                    <p>
+                        Les directives préprocesseures sont des symboles interprétables par le service de préprocesseur
+                        logique. Synthetic fait une lecture du fichier source, passe des requêtes en 
+                        résolvant les liens et références.
+                    </p>
+                    <h3 id="imp">@import</h3>
+                    <p>
+                        La directive @import permet d'importer des modules dans un fichier sources.
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            Les modules sont la plupart du temps des @mixin et @module aussi
+                        </strong>
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@import</c> <c class="file">nom_fichier</c>;</pre>
+                    </example>
+                    <p>
+                        On peut aussi importer un fichier qui existe dans un autre package.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@import</c> <c class="file">nom_fichier</c> <c class="directive">from</c> <c class="package">nom_package</c>;</pre>
+                    </example>
+                    <p>
+                        <strong class="info-box blue">
+                            <i class="ion-information-circled"></i> 
+                            @import crée implicitement l'alias d'accès via le nom du fichier, dans le cas où on ne définit pas l'alias.
+                        </strong>
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@import</c> <c class="file">nom_fichier</c> <c class="directive">from</c> <c class="package">nom_package</c> <c class="directive">into</c> <c class="alias">alias</c>;  <c class="comment">// Importation de fichier via un package</c></pre>
+                        <pre class="code"><c class="directive">@import</c> <c class="file">nom_fichier2</c>; <c class="comment">// Importation de fichier</c> <br><c class="comment">//utilisation des modules importés</c><br><c class="directive">@use</c> <c class="alias">alias</c>.<c class="member">nom_Mixin</c>();<br><c class="directive">@use</c> <c class="alias">nom_fichier2</c>.<c class="member">nomMixin</c>();</pre>
+                    </example>
+                    <h3 id="from">@from</h3>
+                    <p>
+                        La directive <b>@from</b> est fait spécifiquement pour trier ou indexer un ou plusieurs modules dans un fichier.
+                        Toutefois, elle ressemble à @import lorsqu'on est dans le cas d'importation de fichier via un package.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@from</c> <c class="file">fichier</c> <c class="directive">import</c> <c class="variable">module</c>;</pre>
+                    </example>
+                    <p>
+                        @from ne crée pas implicitement des alias.
+                    </p>
+                    <h3 id="inc">@include</h3>
+                    <p>
+                        La directive <b>@include</b> copie-colle le contenu du fichier à importer dans le fichier source.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@include</c> <c class="file">nom_fichier</c>;</pre>
+                    </example>
+                    <p>
+                        Mais toutefois, si l'on souhaite avoir le controle sur la zone d'insertion, on peut stocker
+                        le résultat dans un alias et l'utiliser après où l'on souhaite.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@include</c> <c class="file">nom_fichier</c> <c class="directive">into</c> <c class="alias">alias</c>;<br><br><c class="directive">@use</c> <c class="variable">alias</c>; <c class="comment">//On insère le contenu de l'include.</c></pre>
+                    </example>
+                    <p>
+                        On peut aussi inclure un ou plusieurs fichier provenant d'un package.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@include</c> <c class="file">nom_fichier, nom_fichier2</c> <c class="directive">from</c> <c class="package">nom_package</c>;</pre>
+                    </example>
+                    <h3 id="use">@use</h3>
+                    <p>
+                        Voir <a href="#mxnuse">utilisation des mixins</a>.
+                    </p>
+                    <h3 id="req">@require</h3>
+                    <p>
+                        La directive <b>@require</b> permet à SSPA de savoir quel ressource supplémentaire aurait besoin un Layer (couche).
+                        Son utilisation est bien simple, il suffit de préciser les fichiers à prendre en compte.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@require</c> <c class="file">fichier.js</c>, <c class="file">fichier2.css</c>;</pre>
+                    </example> 
+                    <p>
+                        <strong class="info-box red">
+                            <i class="ion-alert-circled"></i> 
+                            Il est déconseillé de mettre les noms des fichiers en ignorant le chemin de base qu'on a précisé dans le
+                            fichier ".lmi", c'est à dire de les mettre avec le chemin du dossier dans lequel ils se trouvent.
+                            La relativisation du chemin sera fait automatiquement par Synthetic; pas besoin de le préciser.
+                        </strong>
+                    </p>
+                    <h3 id="ssp">@sspa-phase</h3>
+                    <p>
+                        Cette directive précise à quelle phase se trouve un Layer, et permet aussi de définir si ce Layer
+                        est celui qui est par défaut pour la phase.
+                    </p>
+                    <example>
+                        <pre class="code"><c class="directive">@sspa-phase</c> <c class="value constant">0</c>; <c class="comment">// Met un Layer dans la phase 0;</c></pre>
+                        <pre class="code"><c class="directive">@sspa-phase</c> <c class="value constant">0</c> <c class="value text">default</c>; <c class="comment">// Met un Layer dans la phase 0, et le définit par défaut;</c></pre>
+                    </example>
+                    <p>
+                        Cette directive doit être obligatoirement placée au début du fichier.
+                        <strong class="info-box">
+                            <i class="ion-information-circled"></i> 
+                            Si on ne définit pas la phase pour un Layer, il prend alors la phase 0 de façon implicite.
+                        </strong>
+                    </p>
+                    <br><br><br>
+                    <p class="credit">
+                        &copy;2021, Synthetic documentation.
+                    </p>
+                </div>
+            </div><br><br><br><br>
+            <footer class="super-flex-center super-l12 pmoy-super">
+                <div class="sector super super-al-center super-l6 pmoy-super-l12">
+                    <div class="super super-l12">
+                        <h3 class="super super-al-left pmoy-super-l12">Inscrivez-vous à notre infolettre</h3>
+                        <div class="wrapper super super-flex-center field super-l8 pmoy-super-l12">
+                            <input type="email" placeholder="Votre adresse e-mail" class="super super-l11">
+                            <button class="las la-mail-bulk super"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sector super super-al-center super-l4 pmoy-super-l12 social">
+                    <h3 class="super super-l12">Suivez-nous</h3>
+                    <a href="https://facebook.com/?s=sjs2Gds_xss" class="las la-facebook-f icon f"></a>
+                    <a href="https://twitter.com/" class="las la-twitter icon t"></a>
+                    <a href="https://linkedin.com/" class="las la-linkedin-in icon l"></a>
+                    <a href="https://instagram.com/" class="las la-instagram icon i"></a>
+                    <a href="https://pinterest.com/" class="las la-pinterest-p icon p"></a>
+                </div>
+                <div class="sector super super-al-center pmoy-super-l12 super super-l2">
+                    <div class="img" style="background-image: url(../photos/SSPA-logo.png);"></div>
+                </div>
+            </footer>
+        </view>
+    </div>
+</body>
+</html>
